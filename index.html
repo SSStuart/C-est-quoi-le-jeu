@@ -34,6 +34,10 @@
 		}
 		tr {
 			padding: 7px;
+			transition: 500ms;
+		}
+		tr:hover {
+			transform: translateX(10px);
 		}
 		td, th {
 			padding-inline: 1ch;
@@ -45,6 +49,9 @@
 		th {
 			opacity: 0.7;
 			padding: 1em;
+		}
+		#tableBody tr:nth-child(2n) {
+			background-color: #e2bc8b38;
 		}
 		p {
 			font-style: italic;
