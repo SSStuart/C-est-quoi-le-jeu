@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>C'est quoi le jeu ? - Classement</title>
+	<style>
+		@media (prefers-color-scheme: light) {
+			html {
+				color-scheme: light;
+			}
+		}
+
+		@media (prefers-color-scheme: dark) {
+			html {
+				color-scheme: dark;
+			}
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			gap: 2em;
+			min-height: 100vh;
+			margin: 0;
+			font-size: x-large;
+		}
+		table {
+			margin-inline: auto;
+			font-size: larger;
+			border-spacing: 0;
+		}
+		tr {
+			padding: 7px;
+		}
+		td, th {
+			padding-inline: 1ch;
+			text-align: center;
+		}
+		table td:nth-child(1) {
+			border-right: 1px solid #888;
+		}
+		th {
+			opacity: 0.7;
+			padding: 1em;
+		}
+		p {
+			font-style: italic;
+			margin-inline: auto;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre de jeux trouvés</th>
+				<th>Pseudo</th>
+			</tr>
+		</thead>
+		<tbody id="tableBody">
+			<!-- Contenu généré automatiquement -->
+		</tbody>
+	</table>
+	<p>Nombre de jeux total devinés : 9</p>
+</body>
+<script>
+	var tableLeaderboard = `2   | Loyde
+1.5 | Tristan
+1   | Strike7617
+1   | dj pancho
+1   | ŔĂĐĹŶ_ŐŔ_ŃŐŤツ
+1   | BreizhHardware
+0.5 | Rayreth`
+
+	listPoints = tableLeaderboard.split("\n");
+	listPoints.forEach(ligne => {
+		var points = ligne.split("|")[0].trim();
+		var nom = ligne.split("|")[1].trim();
+
+		const tablerow = document.createElement("tr");
+
+  	const tabledataPoints = document.createElement("td");
+		tabledataPoints.innerText = points;
+		const tabledataNom = document.createElement("td");
+		tabledataNom.innerText = nom;
+
+		tablerow.appendChild(tabledataPoints);
+		tablerow.appendChild(tabledataNom);
+
+		document.getElementById("tableBody").appendChild(tablerow);
+	});
+</script>
+</html>
