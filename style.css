@@ -19,6 +19,9 @@ body {
 	font-size: x-large;
 	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 }
+h1 {
+	color: #941b0c;
+}
 table {
 	margin-inline: auto;
 	font-size: larger;
