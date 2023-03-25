@@ -20,8 +20,15 @@ body {
 	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 	text-align: center;
 }
+#logo {
+	height: 2em;
+	margin-inline: 1em;
+	vertical-align: middle;
+}
 h1 {
 	color: #941b0c;
+	display: inline-block;
+	vertical-align: middle;
 }
 table {
 	margin-inline: auto;
