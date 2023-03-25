@@ -18,6 +18,7 @@ body {
 	margin: 0;
 	font-size: x-large;
 	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+	text-align: center;
 }
 h1 {
 	color: #941b0c;
@@ -39,7 +40,6 @@ td {
 }
 td, th {
 	padding-inline: 1ch;
-	text-align: center;
 }
 table td:nth-child(1) {
 	border-right: 1px solid #888;
@@ -60,7 +60,6 @@ th {
 p {
 	font-style: italic;
 	margin-inline: auto;
-	text-align: center;
 }
 #sponsor {
 	opacity: 0.5;
