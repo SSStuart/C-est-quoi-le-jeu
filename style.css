@@ -69,7 +69,8 @@ p {
 	margin-inline: auto;
 }
 #sponsor {
-	opacity: 0.5;
+	opacity: 0.7;
 	font-style: italic;
-	color: greenyellow;
+	color: #941b0c;
+	font-size: small;
 }
