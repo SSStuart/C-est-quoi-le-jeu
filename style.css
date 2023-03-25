@@ -59,3 +59,8 @@ p {
 	margin-inline: auto;
 	text-align: center;
 }
+#sponsor {
+	opacity: 0.5;
+	font-style: italic;
+	color: greenyellow;
+}
