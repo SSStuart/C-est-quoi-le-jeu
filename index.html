@@ -27,7 +27,7 @@
 		</tbody>
 	</table>
 	<p>
-		Nombre de jeux total devinés : 8<br>
+		Nombre de jeux total devinés : <span id="nbJeuxTotal">...</span><br>
 		... non devinés : 1
 	</p>
 	<p id="sponsor">Sponsorisé par Tristan</p>
@@ -48,7 +48,7 @@
 
 		if(parseInt(points) != NaN)
 			totalPoints+= parseInt(points);
-		console.log(totalPoints);
+		document.getElementById('nbJeuxTotal').innerText = totalPoints;
 
 		const tablerow = document.createElement("tr");
 
