@@ -27,7 +27,7 @@
 		</tbody>
 	</table>
 	<p>
-		Nombre de jeux total devinés : 9<br>
+		Nombre de jeux total devinés : 8<br>
 		... non devinés : 1
 	</p>
 	<p id="sponsor">Sponsorisé par Tristan</p>
@@ -40,10 +40,15 @@
 1   | BreizhHardware
 0 mais BG | Rayreth`
 
+	var totalPoints = 0;
 	listPoints = tableLeaderboard.split("\n");
 	listPoints.forEach(ligne => {
 		var points = ligne.split("|")[0].trim();
 		var nom = ligne.split("|")[1].trim();
+
+		if(parseInt(points) != NaN)
+			totalPoints+= parseInt(points);
+		console.log(totalPoints);
 
 		const tablerow = document.createElement("tr");
 
