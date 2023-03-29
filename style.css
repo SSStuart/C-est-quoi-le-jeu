@@ -40,7 +40,7 @@ tr {
 	transition: 500ms;
 }
 tr:hover {
-	filter: invert(1);
+	filter:contrast(1.5)
 }
 td {
 	word-break: break-word;
