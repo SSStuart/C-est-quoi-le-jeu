@@ -47,6 +47,7 @@ tr:hover {
 }
 td {
 	word-break: break-word;
+	border-top: 1px solid #AAA8;
 }
 td, th {
 	padding-inline: 1ch;
