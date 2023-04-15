@@ -78,3 +78,6 @@ p {
 	color: #941b0c;
 	font-size: small;
 }
+#updatedDate {
+	opacity: 0.5;
+}

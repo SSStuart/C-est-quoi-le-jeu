@@ -38,6 +38,7 @@
 		... non devinés : 2
 	</p>
 	<p id="sponsor">Sponsorisé par Tristan</p>
+	<p id="updatedDate">Mis à jour le <span id="dateAuto">...</span></p>
 </body>
 <script>
 	var tableLeaderboard = `7   | Loyde
@@ -75,5 +76,10 @@
 
 		document.getElementById("tableBody").appendChild(tablerow);
 	});
+
+
+
+	var lastEditDate = new Date(document.lastModified);
+	document.getElementById('dateAuto').innerText = lastEditDate.toLocaleDateString();
 </script>
 </html>
