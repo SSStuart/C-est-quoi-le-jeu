@@ -19,6 +19,7 @@ body {
 	font-size: x-large;
 	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 	text-align: center;
+	cursor: default;
 }
 #logo {
 	height: 2em;
