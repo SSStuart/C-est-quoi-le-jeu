@@ -81,7 +81,7 @@ h1 {
 #stats {
 	font-family: 'Press Start 2P', monospace;
 	font-size: small;
-	margin-top: 6em;
+	margin-block: 6em;
 }
 .stats_nb {
 	font-family: 'Tektur';
