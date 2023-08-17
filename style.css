@@ -30,6 +30,9 @@ body {
 	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 	text-align: center;
 	cursor: default;
+	background-image: url('examples/background.png');
+	background-size: contain;
+	background-repeat: repeat-y;
 }
 
 header {
