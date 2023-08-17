@@ -78,7 +78,15 @@ h1 {
 	transition: 1s cubic-bezier(.22,.61,.36,1);
 }
 
-
+#stats {
+	font-family: 'Press Start 2P', monospace;
+	font-size: small;
+	margin-top: 6em;
+}
+.stats_nb {
+	font-family: 'Tektur';
+	font-size: large;
+}
 p {
 	font-style: italic;
 	margin-inline: auto;
