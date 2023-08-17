@@ -1,3 +1,7 @@
+:root {
+	--main-color: #941b0c;
+}
+
 @media (prefers-color-scheme: light) {
 	html {
 		color-scheme: light;
@@ -7,6 +11,12 @@
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
+	}
+}
+
+@media (max-width: 700px) {
+	#leaderboard {
+		font-size: 50%;
 	}
 }
 
@@ -21,54 +31,54 @@ body {
 	text-align: center;
 	cursor: default;
 }
+
+header {
+	border-bottom: 1px solid gray;
+  	background: linear-gradient(transparent, #8881);
+}
 #logo {
 	height: 2em;
 	margin-inline: 1em;
 	vertical-align: middle;
 }
 h1 {
-	color: #941b0c;
+	color: var(--main-color);
 	display: inline-block;
 	vertical-align: middle;
 }
-table {
-	margin-inline: auto;
-	font-size: larger;
+#leaderboard {
+	margin: 1em auto;
 	border-spacing: 0;
+	text-align: right;
 }
-tbody {
-	background: linear-gradient(#ffd70040, transparent);
-}
-tr {
-	padding: 7px;
+.lb_line {
+	text-decoration: transparent solid 0px underline;
 	transition: 500ms;
 }
-tr:hover {
-	filter:contrast(1.5)
+.lb_line:hover,
+.lb_line:focus {
+	text-decoration: var(--main-color) solid 5px underline;
+	transform: translateY(-5px);
+	outline: none;
 }
-td {
-	word-break: break-word;
-	border-top: 1px solid #AAA8;
+.lb_line:hover .points,
+.lb_line:focus .points {
+	color: var(--main-color);
+	text-shadow: 0 0 var(--main-color);
 }
-td, th {
-	padding-inline: 1ch;
+.pseudo {
+	font-family: 'Press Start 2P', monospace;
 }
-table td:nth-child(1) {
-	border-right: 1px solid #888;
+.points {
+	font-family: 'Tektur', sans-serif;
+	font-size: 1.5em;
+	vertical-align: bottom;
+	margin-left: 2ch;
+	text-shadow: 3px 3px var(--main-color);
+	transition: 1s cubic-bezier(.22,.61,.36,1);
 }
-th {
-	opacity: 0.7;
-	padding: 1em;
-}
-/*#tableBody tr:nth-child(2n) {
-	background-color: #e2bc8b38;
-}
-#tableBody tr:nth-child(1) {
-	box-shadow: 0px 0px 8px #FF0;
-}
-#tableBody tr:nth-child(2) {
-	box-shadow: 0px 0px 4px #FF08;
-}*/
+
+
 p {
 	font-style: italic;
 	margin-inline: auto;
@@ -76,7 +86,7 @@ p {
 #sponsor {
 	opacity: 0.7;
 	font-style: italic;
-	color: #941b0c;
+	color: var(--main-color);
 	font-size: small;
 }
 #updatedDate {

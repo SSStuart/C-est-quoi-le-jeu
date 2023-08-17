@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./style.css?v=2">
 	<link rel="icon" href="./favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tektur:wght@700&display=swap" rel="stylesheet">
 	
 	<meta property="og:description" content="Classement et infos du mini-jeu">
 	<meta property="og:title" content="C'est quoi le jeu ?">
@@ -19,26 +22,20 @@
 	</style>
 </head>
 <body>
-	<div>
+	<header>
 		<h1>C'est quoi le jeu</h1><img id="logo" src="./favicon.png" alt="icon">
+	</header>
+	<div id="leaderboard">
+		<!-- Contenu dynamique -->
 	</div>
-	<table>
-		<thead>
-			<tr>
-				<th>Jeux trouvés</th>
-				<th>Pseudo</th>
-			</tr>
-		</thead>
-		<tbody id="tableBody">
-			<!-- Contenu généré automatiquement -->
-		</tbody>
-	</table>
 	<p>
 		Nombre de jeux total devinés : <span id="nbJeuxTotal">...</span><br>
 		... non devinés : 4
 	</p>
-	<p id="sponsor">Sponsorisé par Tristan et BUG-MAN-FR &#128526;</p>
-	<p id="updatedDate">Mis à jour le <span id="dateAuto">...</span></p>
+	<footer>
+		<p id="sponsor">Sponsorisé par Tristan et BUG-MAN-FR &#128526;</p>
+		<p id="updatedDate">Mis à jour le <span id="dateAuto">...</span></p>
+	</footer>
 </body>
 <script>
 	// NOUVEAU PSEUDO DISCORD : migration restante pour : AST -> Introuvable ...
@@ -75,17 +72,22 @@
 			totalPoints+= parseInt(points);
 		document.getElementById('nbJeuxTotal').innerText = totalPoints;
 
-		const tablerow = document.createElement("tr");
+		const leaderboard_line = document.createElement("div");
+		leaderboard_line.classList.add("lb_line");
+		leaderboard_line.tabIndex = 0;
 
-  	const tabledataPoints = document.createElement("td");
-		tabledataPoints.innerText = points;
-		const tabledataNom = document.createElement("td");
-		tabledataNom.innerText = nom;
+		const lb_line_pseudo = document.createElement("span");
+		lb_line_pseudo.classList.add("pseudo");
+		lb_line_pseudo.innerText = nom;
 
-		tablerow.appendChild(tabledataPoints);
-		tablerow.appendChild(tabledataNom);
+		const lb_line_points = document.createElement("span");
+		lb_line_points.classList.add("points");
+		lb_line_points.innerText = points;
 
-		document.getElementById("tableBody").appendChild(tablerow);
+		leaderboard_line.appendChild(lb_line_pseudo);
+		leaderboard_line.appendChild(lb_line_points);
+
+		document.getElementById("leaderboard").appendChild(leaderboard_line);
 	});
 
 
