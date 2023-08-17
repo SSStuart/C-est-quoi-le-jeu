@@ -6,11 +6,19 @@
 	html {
 		color-scheme: light;
 	}
+
+	body {
+		background-image: linear-gradient(#DDD, #DDD), url('examples/background.png');
+	}
 }
 
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
+	}
+
+	body {
+		background-image: linear-gradient(#333, #333), url('examples/background.png');
 	}
 }
 
@@ -30,9 +38,9 @@ body {
 	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
 	text-align: center;
 	cursor: default;
-	background-image: url('examples/background.png');
 	background-size: contain;
 	background-repeat: repeat-y;
+	background-blend-mode: multiply;
 }
 
 header {
