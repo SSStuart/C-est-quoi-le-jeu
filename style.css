@@ -41,7 +41,7 @@ body {
 
 header {
 	border-bottom: 1px solid gray;
-  	background: linear-gradient(transparent, #8881);
+	box-shadow: 0 -19px 74px var(--main-color);
 }
 #logo {
 	height: 2em;
@@ -87,6 +87,7 @@ h1 {
 	font-family: 'Press Start 2P', monospace;
 	font-size: small;
 	margin-block: 6em;
+	text-align: right;
 }
 .stats_nb {
 	font-family: 'Tektur';
@@ -97,12 +98,10 @@ p {
 	margin-inline: auto;
 }
 #sponsor {
-	opacity: 0.7;
 	font-style: italic;
 	color: var(--main-color);
 	font-size: small;
 }
 #updatedDate {
-	opacity: 0.5;
 	font-size: 0.5em;
 }
