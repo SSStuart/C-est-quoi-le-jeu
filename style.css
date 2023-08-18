@@ -1,16 +1,23 @@
-:root {
-	--main-color: #941b0c;
-}
+
 
 @media (prefers-color-scheme: light) {
 	html {
 		color-scheme: light;
+	}
+	:root {
+		--main-color: #941b0c;
 	}
 }
 
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
+	}
+	:root {
+		--main-color: #de2a13;
+	}
+	#logo {
+		filter: brightness(1.5);
 	}
 }
 
