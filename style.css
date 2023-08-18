@@ -34,7 +34,7 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	font-size: x-large;
-	font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+	font-family: Oswald, Arial, Helvetica, sans-serif;
 	text-align: center;
 	cursor: default;
 }
@@ -59,12 +59,12 @@ h1 {
 	text-align: right;
 }
 .lb_line {
-	text-decoration: transparent solid 0px underline;
+	border-bottom: 3px solid transparent;
 	transition: 500ms;
 }
 .lb_line:hover,
 .lb_line:focus {
-	text-decoration: var(--main-color) solid 5px underline;
+	border-bottom: 3px solid var(--main-color);
 	transform: translateY(-5px);
 	outline: none;
 }
