@@ -64,7 +64,6 @@ h1 {
 .lb_line:hover .points,
 .lb_line:focus .points {
 	color: var(--main-color);
-	text-shadow: 0 0 var(--main-color);
 }
 .pseudo {
 	font-family: 'Press Start 2P', monospace;
@@ -74,7 +73,6 @@ h1 {
 	font-size: 1.5em;
 	vertical-align: bottom;
 	margin-left: 2ch;
-	text-shadow: 3px 3px var(--main-color);
 	transition: 1s cubic-bezier(.22,.61,.36,1);
 }
 
