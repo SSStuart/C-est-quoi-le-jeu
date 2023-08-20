@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style.css?v=3.3">
+	<link rel="stylesheet" href="./style.css?v=3.4">
 	<link rel="icon" href="./favicon.ico">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,6 +112,9 @@
 		leaderboard_line.appendChild(lb_line_pseudo);
 		leaderboard_line.appendChild(lb_line_points);
 
+		if (points < 0) {
+			leaderboard_line.classList.add("negative");
+		}
 		document.getElementById("leaderboard").appendChild(leaderboard_line);
 	});
 
