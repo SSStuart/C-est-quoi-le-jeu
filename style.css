@@ -87,25 +87,31 @@ h1 {
 	margin-right: 1ch;
 	image-rendering: pixelated;
 	filter: drop-shadow(8px 7px 3px #0004);
+	transition: 500ms;
+}
+.award:not(:hover) {
 	animation: float 3s infinite ease-in-out;
 }
 @keyframes float {
 	0% {
-		transform: translateY(2px);
+		transform: translateY(2px) scale(1) rotate3D(0,0,0,0);
 	}
 	50% {
-		transform: translateY(-5px);
+		transform: translateY(-5px) scale(1) rotate3D(0,0,0,0);
 	}
 	100% {
-		transform: translateY(2px);
+		transform: translateY(2px) scale(1) rotate3D(0,0,0,0);
 	}
+}
+.award:hover {
+	transform: scale(1.5) rotate3D(0,1,-0.2,20deg);
+	filter: drop-shadow(8px 7px 14px #0008) brightness(1.1);
 }
 
 #stats {
 	font-family: 'Press Start 2P', monospace;
 	font-size: small;
 	margin-block: 6em;
-	text-align: right;
 }
 .stats_nb {
 	font-family: 'Tektur';
