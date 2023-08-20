@@ -60,18 +60,39 @@
 1   | alexlebabtou
 1   | emma.sch
 1	| ougarix
-0 mais BG	| rayreth
+0	| rayreth
 -2      | colonelfp14`
 
 	var totalPoints = 0;
+	var lineNb = 0;
 	listPoints = tableLeaderboard.split("\n");
 	listPoints.forEach(ligne => {
+		lineNb++;
+		asAward = false;
 		var points = ligne.split("|")[0].trim();
 		var nom = ligne.split("|")[1].trim();
 
 		if(parseInt(points) != NaN)
 			totalPoints+= parseInt(points);
 		document.getElementById('nbJeuxTotal').innerText = totalPoints;
+
+		const award = document.createElement("img");
+		award.classList.add("award");
+		if(lineNb == 1) {
+			award.src = "./trophyFirst.png";
+			award.alt = "Trophée de la première place";
+			award.title = "Trophée : Première place, GG !";
+
+			asAward = true;
+		}
+		if(nom == "rayreth") {
+			award.src = "./trophyBG.png";
+			award.alt = "Trophée pour un BG 😎";
+			award.title = "Trophée : BG 😎";
+
+			asAward = true;
+		}
+			
 
 		const leaderboard_line = document.createElement("div");
 		leaderboard_line.classList.add("lb_line");
@@ -85,6 +106,9 @@
 		lb_line_points.classList.add("points");
 		lb_line_points.innerText = points;
 
+		if (asAward) {
+			leaderboard_line.appendChild(award);
+		}
 		leaderboard_line.appendChild(lb_line_pseudo);
 		leaderboard_line.appendChild(lb_line_points);
 

@@ -82,6 +82,24 @@ h1 {
 	margin-left: 2ch;
 	transition: 1s cubic-bezier(.22,.61,.36,1);
 }
+.award {
+	height: 1.5em;
+	margin-right: 1ch;
+	image-rendering: pixelated;
+	filter: drop-shadow(8px 7px 3px #0004);
+	animation: float 3s infinite ease-in-out;
+}
+@keyframes float {
+	0% {
+		transform: translateY(2px);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+	100% {
+		transform: translateY(2px);
+	}
+}
 
 #stats {
 	font-family: 'Press Start 2P', monospace;
