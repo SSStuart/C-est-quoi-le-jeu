@@ -76,19 +76,27 @@
 			totalPoints+= parseInt(points);
 		document.getElementById('nbJeuxTotal').innerText = totalPoints;
 
+		/*   TROPHÉES   */
 		const award = document.createElement("img");
 		award.classList.add("award");
-		if(lineNb == 1) {
+		if (lineNb == 1) {
 			award.src = "./pictures/trophyFirst.png";
 			award.alt = "Trophée de la première place";
 			award.title = "Trophée : Première place, GG !";
 
 			asAward = true;
 		}
-		if(nom == "rayreth") {
+		if (nom == "rayreth") {
 			award.src = "./pictures/trophyBG.png";
 			award.alt = "Trophée pour un BG 😎";
 			award.title = "Trophée : BG 😎";
+
+			asAward = true;
+		}
+		if (nom == "tristtann") {
+			award.src = "./pictures/trophyFishy.png";
+			award.alt = "Trophée du 1er avril";
+			award.title = "Trophée : ça sent le poisson (1er avril)";
 
 			asAward = true;
 		}
