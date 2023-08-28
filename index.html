@@ -77,9 +77,11 @@
 		document.getElementById('nbJeuxTotal').innerText = totalPoints;
 
 		/*   TROPHÉES   */
-		const award = document.createElement("img");
-		award.classList.add("award");
+		
 		if (lineNb == 1) {
+			const award = document.createElement("img");
+			award.classList.add("award");
+			
 			award.src = "./pictures/trophyFirst.png";
 			award.alt = "Trophée de la première place";
 			award.title = "Trophée : Première place, GG !";
@@ -87,6 +89,9 @@
 			asAward = true;
 		}
 		if (nom == "rayreth") {
+			const award = document.createElement("img");
+			award.classList.add("award");
+
 			award.src = "./pictures/trophyBG.png";
 			award.alt = "Trophée pour un BG 😎";
 			award.title = "Trophée : BG 😎";
@@ -94,6 +99,9 @@
 			asAward = true;
 		}
 		if (nom == "tristtann") {
+			const award = document.createElement("img");
+			award.classList.add("award");
+
 			award.src = "./pictures/trophyFishy.png";
 			award.alt = "Trophée du 1er avril";
 			award.title = "Trophée : ça sent le poisson (1er avril)";
