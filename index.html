@@ -76,17 +76,21 @@
 			totalPoints+= parseInt(points);
 		document.getElementById('nbJeuxTotal').innerText = totalPoints;
 
+		const leaderboard_line = document.createElement("div");
+		leaderboard_line.classList.add("lb_line");
+		leaderboard_line.tabIndex = 0;
+
 		/*   TROPHÉES   */
 		
 		if (lineNb == 1) {
 			const award = document.createElement("img");
 			award.classList.add("award");
-			
+
 			award.src = "./pictures/trophyFirst.png";
 			award.alt = "Trophée de la première place";
 			award.title = "Trophée : Première place, GG !";
 
-			asAward = true;
+			leaderboard_line.appendChild(award);
 		}
 		if (nom == "rayreth") {
 			const award = document.createElement("img");
@@ -96,7 +100,7 @@
 			award.alt = "Trophée pour un BG 😎";
 			award.title = "Trophée : BG 😎";
 
-			asAward = true;
+			leaderboard_line.appendChild(award);
 		}
 		if (nom == "tristtann") {
 			const award = document.createElement("img");
@@ -106,13 +110,8 @@
 			award.alt = "Trophée du 1er avril";
 			award.title = "Trophée : ça sent le poisson (1er avril)";
 
-			asAward = true;
+			leaderboard_line.appendChild(award);
 		}
-			
-
-		const leaderboard_line = document.createElement("div");
-		leaderboard_line.classList.add("lb_line");
-		leaderboard_line.tabIndex = 0;
 
 		const lb_line_pseudo = document.createElement("span");
 		lb_line_pseudo.classList.add("pseudo");
@@ -122,9 +121,6 @@
 		lb_line_points.classList.add("points");
 		lb_line_points.innerText = points;
 
-		if (asAward) {
-			leaderboard_line.appendChild(award);
-		}
 		leaderboard_line.appendChild(lb_line_pseudo);
 		leaderboard_line.appendChild(lb_line_points);
 
