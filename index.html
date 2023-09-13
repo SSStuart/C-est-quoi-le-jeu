@@ -30,7 +30,7 @@
 	</div>
 	<p id="stats">
 		Nombre de jeux total devinés : <span id="nbJeuxTotal" class="stats_nb">...</span><br>
-		… non devinés : <span class="stats_nb">4</span>
+		… non devinés : <span class="stats_nb">5</span>
 	</p>
 	<footer>
 		<p id="sponsor">Sponsorisé par Tristan et BUG-MAN-FR &#128526;</p>
@@ -109,6 +109,17 @@
 			award.src = "./pictures/trophyFishy.png";
 			award.alt = "Trophée du 1er avril";
 			award.title = "Trophée : ça sent le poisson (1er avril)";
+
+			leaderboard_line.appendChild(award);
+		}
+		if (nom == "...") {
+			const award = document.createElement("img");
+			award.classList.add("award");
+
+			award.src = "./pictures/trophyNotADolphin.png";
+			award.alt = "Trophée de l'éléphin";
+			award.title = "Trophée : Ceci n'est pas un dauphin";
+
 
 			leaderboard_line.appendChild(award);
 		}
