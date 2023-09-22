@@ -89,7 +89,9 @@
 			award.src = "./pictures/trophyFirst.png";
 			award.alt = "Trophée de la première place";
 			award.title = "Trophée : Première place, GG !";
-			award.onclick = showAward(award);
+			award.onclick = function() {
+				award.classList.toggle("show");
+			}
 
 			leaderboard_line.appendChild(award);
 		}
@@ -142,12 +144,6 @@
 		document.getElementById("leaderboard").appendChild(leaderboard_line);
 	});
 
-
-	function showAward(award) {
-		award.onclick = function() {
-			award.classList.toggle("show");
-		}
-	}
 
 	var lastEditDate = new Date(document.lastModified);
 	document.getElementById('dateAuto').innerText = lastEditDate.toLocaleDateString();
