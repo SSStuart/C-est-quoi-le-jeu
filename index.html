@@ -28,6 +28,11 @@
 	<div id="leaderboard">
 		<!-- Contenu dynamique -->
 	</div>
+	<div id="awardContainer">
+		<span id="awardFSClose">Cliquez n'importe où pour fermer</span>
+		<img id="awardFSImg" src="" alt="">
+		<p id="awardFSTitle"></p>
+	</div>
 	<p id="stats">
 		Nombre de jeux total devinés : <span id="nbJeuxTotal" class="stats_nb">...</span><br>
 		… non devinés : <span class="stats_nb">5</span>
@@ -90,7 +95,7 @@
 			award.alt = "Trophée de la première place";
 			award.title = "Trophée : Première place, GG !";
 			award.onclick = function() {
-				award.classList.toggle("show");
+				showAward(award.title, award.src);
 			}
 
 			leaderboard_line.appendChild(award);
@@ -102,6 +107,9 @@
 			award.src = "./pictures/trophyBG.png";
 			award.alt = "Trophée pour un BG 😎";
 			award.title = "Trophée : BG 😎";
+			award.onclick = function() {
+				showAward(award.title, award.src);
+			}
 
 			leaderboard_line.appendChild(award);
 		}
@@ -112,6 +120,9 @@
 			award.src = "./pictures/trophyFishy.png";
 			award.alt = "Trophée du 1er avril";
 			award.title = "Trophée : ça sent le poisson (1er avril)";
+			award.onclick = function() {
+				showAward(award.title, award.src);
+			}
 
 			leaderboard_line.appendChild(award);
 		}
@@ -122,7 +133,9 @@
 			award.src = "./pictures/trophyNotADolphin.png";
 			award.alt = "Trophée de l'éléphin";
 			award.title = "Trophée : Ceci n'est pas un dauphin";
-
+			award.onclick = function() {
+				showAward(award.title, award.src);
+			}
 
 			leaderboard_line.appendChild(award);
 		}
@@ -144,6 +157,18 @@
 		document.getElementById("leaderboard").appendChild(leaderboard_line);
 	});
 
+	function showAward(title, src) {
+		document.getElementById("awardFSTitle").innerText = title;
+		document.getElementById("awardFSImg").src = src;
+
+		document.getElementById("awardContainer").classList.add("visible");
+	}
+
+	document.getElementById("awardContainer").addEventListener("click", function() {
+		document.getElementById("awardContainer").classList.add("hide");
+		document.getElementById("awardContainer").classList.remove("visible");
+		setTimeout(function(){ document.getElementById("awardContainer").classList.remove("hide"); }, 400);
+	});
 
 	var lastEditDate = new Date(document.lastModified);
 	document.getElementById('dateAuto').innerText = lastEditDate.toLocaleDateString();

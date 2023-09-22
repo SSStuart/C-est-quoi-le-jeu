@@ -110,6 +110,54 @@ h1 {
 	filter: drop-shadow(8px 7px 14px #0008) brightness(1.1);
 }
 
+#awardContainer {
+	position: fixed;
+	inset: 0;
+	background: radial-gradient(#000, #0008 90%);
+	color: #fff;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	perspective: 400px;
+	display: none;
+}
+#awardContainer.hide {
+	display: flex;
+	animation: disappear 500ms;
+}
+@keyframes disappear {
+	from {opacity: 1;}
+	to {opacity: 0;}
+}
+#awardContainer.visible {
+	display: flex;
+	animation: appear 500ms;
+}
+@keyframes appear {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+#awardFSImg {
+	height: 40vh;
+	image-rendering: pixelated;
+	transform: rotateY(5deg)
+}
+#awardContainer.visible #awardFSImg {
+	animation: turn 2s;
+}
+@keyframes turn {
+	0% {transform: rotateY(-40deg);
+		filter:brightness(1);}
+	50% {filter:brightness(1.2);}
+	100% {transform: rotateY(5deg);
+		filter:brightness(1);}
+}
+#awardFSClose {
+	font-size: small;
+	opacity: 0.5;
+	margin-bottom: 3em;
+}
+
 #stats {
 	font-family: 'Press Start 2P', monospace;
 	font-size: small;
