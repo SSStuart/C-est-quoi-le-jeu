@@ -45,7 +45,7 @@
 <script>
 	// NOUVEAU PSEUDO DISCORD : migration restante pour : AST -> Introuvable ...
 	var tableLeaderboard = 
-`16	| tristtann
+`17	| tristtann
 12	| _loyde18
 5	| ichinose0001
 5	| bosslennygood
@@ -126,13 +126,13 @@
 
 			leaderboard_line.appendChild(award);
 		}
-		if (nom == "...") {
+		if (nom == "tristtann") {
 			const award = document.createElement("img");
 			award.classList.add("award");
 
-			award.src = "./pictures/trophyNotADolphin.png";
-			award.alt = "Trophée de l'éléphin";
-			award.title = "Trophée : Ceci n'est pas un dauphin";
+			award.src = "./pictures/trophyRGB.png";
+			award.alt = "Trophée de la teinte";
+			award.title = "Trophée : un jeu *Hue* en couleur";
 			award.onclick = function() {
 				showAward(award.title, award.src);
 			}
