@@ -89,16 +89,16 @@
 		/*   TROPHÉES   */
 		
 		if (lineNb == 1) {
-			addAward("trophyFirst", "Trophée : Première place, GG !", "Trophée de la première place");
+			addAward("trophyFirst", "Trophée : Première place, GG !", "Trophée de la première place", leaderboard_line);
 		}
 		if (nom == "rayreth") {
-			addAward("trophyBG", "Trophée : BG 😎", "Trophée pour un BG 😎");
+			addAward("trophyBG", "Trophée : BG 😎", "Trophée pour un BG 😎", leaderboard_line);
 		}
 		if (nom == "tristtann") {
-			addAward("trophyFishy", "Trophée : ça sent le poisson (1er avril)", "Trophée du 1er avril");
+			addAward("trophyFishy", "Trophée : ça sent le poisson (1er avril)", "Trophée du 1er avril", leaderboard_line);
 		}
 		if (nom == "tristtann") {
-			addAward("trophyRGB", "Trophée : un jeu *Hue* en couleur", "Trophée du jeu Hue");
+			addAward("trophyRGB", "Trophée : un jeu *Hue* en couleur", "Trophée du jeu Hue", leaderboard_line);
 		}
 
 		const lb_line_pseudo = document.createElement("span");
@@ -118,7 +118,7 @@
 		document.getElementById("leaderboard").appendChild(leaderboard_line);
 	});
 
-	function addAward(fileName, title, alt) {
+	function addAward(fileName, title, alt, container) {
 		const award = document.createElement("img");
 		award.classList.add("award");
 
@@ -129,7 +129,7 @@
 			showAward(award.title, award.src);
 		}
 
-		leaderboard_line.appendChild(award);
+		container.appendChild(award);
 	}
 
 	function showAward(title, src) {
