@@ -66,6 +66,7 @@
 1   | alexlebabtou
 1   | emma.sch
 0	| rayreth
+0	| bugmanfr
 -1	| colonelfp14`
 
 	var totalPoints = 0;
@@ -88,56 +89,16 @@
 		/*   TROPHÉES   */
 		
 		if (lineNb == 1) {
-			const award = document.createElement("img");
-			award.classList.add("award");
-
-			award.src = "./pictures/trophyFirst.png";
-			award.alt = "Trophée de la première place";
-			award.title = "Trophée : Première place, GG !";
-			award.onclick = function() {
-				showAward(award.title, award.src);
-			}
-
-			leaderboard_line.appendChild(award);
+			addAward("trophyFirst", "Trophée : Première place, GG !", "Trophée de la première place");
 		}
 		if (nom == "rayreth") {
-			const award = document.createElement("img");
-			award.classList.add("award");
-
-			award.src = "./pictures/trophyBG.png";
-			award.alt = "Trophée pour un BG 😎";
-			award.title = "Trophée : BG 😎";
-			award.onclick = function() {
-				showAward(award.title, award.src);
-			}
-
-			leaderboard_line.appendChild(award);
+			addAward("trophyBG", "Trophée : BG 😎", "Trophée pour un BG 😎");
 		}
 		if (nom == "tristtann") {
-			const award = document.createElement("img");
-			award.classList.add("award");
-
-			award.src = "./pictures/trophyFishy.png";
-			award.alt = "Trophée du 1er avril";
-			award.title = "Trophée : ça sent le poisson (1er avril)";
-			award.onclick = function() {
-				showAward(award.title, award.src);
-			}
-
-			leaderboard_line.appendChild(award);
+			addAward("trophyFishy", "Trophée : ça sent le poisson (1er avril)", "Trophée du 1er avril");
 		}
 		if (nom == "tristtann") {
-			const award = document.createElement("img");
-			award.classList.add("award");
-
-			award.src = "./pictures/trophyRGB.png";
-			award.alt = "Trophée de la teinte";
-			award.title = "Trophée : un jeu *Hue* en couleur";
-			award.onclick = function() {
-				showAward(award.title, award.src);
-			}
-
-			leaderboard_line.appendChild(award);
+			addAward("trophyRGB", "Trophée : un jeu *Hue* en couleur", "Trophée du jeu Hue");
 		}
 
 		const lb_line_pseudo = document.createElement("span");
@@ -156,6 +117,20 @@
 		}
 		document.getElementById("leaderboard").appendChild(leaderboard_line);
 	});
+
+	function addAward(fileName, title, alt) {
+		const award = document.createElement("img");
+		award.classList.add("award");
+
+		award.src = "./pictures/" + fileName + ".png";
+		award.alt = alt;
+		award.title = title;
+		award.onclick = function() {
+			showAward(award.title, award.src);
+		}
+
+		leaderboard_line.appendChild(award);
+	}
 
 	function showAward(title, src) {
 		document.getElementById("awardFSTitle").innerText = title;
