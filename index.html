@@ -1,158 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./style.css?v=3.4">
-	<script src="https://ssstuart.net/APIs/WWWidget.js"></script>
-	<link rel="icon" href="./favicon.ico">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Press+Start+2P&family=Tektur:wght@700&display=swap" rel="stylesheet">
-	
-	<title>C'est quoi le jeu ? - Classement</title>
-	<meta name="author" content="SSStuart">
-    <meta name="description" content="Classement et infos du mini-jeu">
-
-	<meta property="og:description" content="Classement et infos du mini-jeu">
-	<meta property="og:title" content="C'est quoi le jeu ?">
-	<meta property="og:url" content="https://ssstuart.github.io/C-est-quoi-le-jeu/" />
-	<meta property="og:type" content="website"/>
-	<meta property="og:image" content="https://ssstuart.github.io/C-est-quoi-le-jeu/favicon.png" />
-	<meta name="theme-color" content="#941b0c">
-</head>
-<body>
-	<header>
-		<h1>C'est quoi le jeu</h1><img id="logo" src="./favicon.png" alt="icon">
-	</header>
-	<div id="leaderboard">
-		<!-- Contenu dynamique -->
-	</div>
-	<div id="awardContainer">
-		<span id="awardFSClose">Cliquez n'importe où pour fermer</span>
-		<img id="awardFSImg" src="" alt="">
-		<p id="awardFSTitle"></p>
-	</div>
-	<p id="stats">
-		Nombre de jeux total devinés : <span id="nbJeuxTotal" class="stats_nb">...</span><br>
-		… non devinés : <span class="stats_nb">7</span>
-	</p>
-	<footer>
-		<p id="sponsor">Sponsorisé par Tristan et BUG-MAN-FR &#128526;</p>
-		<p id="updatedDate">Mis à jour le <span id="dateAuto">...</span></p>
-	</footer>
-</body>
-<script>
-	// NOUVEAU PSEUDO DISCORD : migration restante pour : AST -> Introuvable ...
-	var tableLeaderboard = 
-`18	| tristtann
-13	| _loyde18
-6	| bosslennygood
-5	| ichinose0001
-4	| damien0792
-4	| ipsut
-4	| _mmario
-3	| breizhhardware
-3	| redpig_72
-2	| radly_or_not
-2	| ougarix
-2	| emma.sch
-1	| strike7617
-1	| dj_pancho
-1	| AST
-1	| lysdead
-1	| picrouge
-1   | fizz1774
-1   | jeanmichel_bis
-1   | alexlebabtou
-0	| rayreth
-0	| bugmanfr
--1	| colonelfp14`
-
-	var totalPoints = 0;
-	var lineNb = 0;
-	listPoints = tableLeaderboard.split("\n");
-	listPoints.forEach(ligne => {
-		lineNb++;
-		asAward = false;
-		var points = ligne.split("|")[0].trim();
-		var nom = ligne.split("|")[1].trim();
-
-		if(parseInt(points) != NaN)
-			totalPoints+= parseInt(points);
-		document.getElementById('nbJeuxTotal').innerText = totalPoints;
-
-		const leaderboard_line = document.createElement("div");
-		leaderboard_line.classList.add("lb_line");
-		leaderboard_line.tabIndex = 0;
-
-		/*   TROPHÉES   */
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./style.css">
+		<link rel="icon" href="./favicon.ico">
+		<script src="https://ssstuart.net/APIs/WWWidget.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Press+Start+2P&family=Tektur:wght@700&display=swap" rel="stylesheet">
 		
-		if (lineNb == 1) {
-			addAward("trophyFirst", "Trophée : Première place, GG !", "Trophée de la première place", leaderboard_line);
+		<title>C'est quoi le jeu ? - Classement</title>
+		<meta name="author" content="SSStuart">
+		<meta name="description" content="Classement et infos du mini-jeu">
+	
+		<meta property="og:description" content="Classement et infos du mini-jeu">
+		<meta property="og:title" content="C'est quoi le jeu ?">
+		<meta property="og:url" content="https://ssstuart.github.io/C-est-quoi-le-jeu/" />
+		<meta property="og:type" content="website"/>
+		<meta property="og:image" content="https://ssstuart.github.io/C-est-quoi-le-jeu/favicon.png" />
+		<meta name="theme-color" content="#941b0c">
+	</head>
+	<body>
+		<header>
+			<h1>C'est quoi le jeu</h1><img id="logo" src="./favicon.png" alt="icon">
+		</header>
+		<div id="leaderboard">
+			<!-- Contenu dynamique -->
+		</div>
+		<div id="awardContainer">
+			<span id="awardFSClose">Cliquez n'importe où pour fermer</span>
+			<img id="awardFSImg" src="" alt="">
+			<p id="awardFSTitle"></p>
+		</div>
+		<p id="stats">
+			Nombre de jeux total devinés : <span id="nbJeuxTotal" class="stats_nb">...</span><br>
+			… non devinés : <span class="stats_nb">7</span>
+		</p>
+		<footer>
+			<p id="sponsor">Sponsorisé par Tristan et BUG-MAN-FR &#128526;</p>
+			<p id="updatedDate">Mis à jour le <span id="dateAuto">...</span></p>
+		</footer>
+	</body>
+	<script>
+		// Classement des joueurs
+		const tableLeaderboard = {
+			"tristtann":		"18",
+			"_loyde18":			"13",
+			"bosslennygood":	"6",
+			"ichinose0001":		"5",
+			"damien0792":		"4",
+			"ipsut":			"4",
+			"_mmario":			"4",
+			"breizhhardware":	"3",
+			"redpig_72":		"3",
+			"radly_or_not":		"2",
+			"ougarix":			"2",
+			"emma.sch":			"2",
+			"strike7617":		"1",
+			"dj_pancho":		"1",
+			"AST":				"1",
+			"lysdead":			"1",
+			"picrouge":			"1",
+			"fizz1774":			"1",
+			"jeanmichel_bis":	"1",
+			"alexlebabtou":		"1",
+			"rayreth":			"0",
+			"bugmanfr":			"0",
+			"colonelfp14":		"-1"
 		}
-		if (nom == "rayreth") {
-			addAward("trophyBG", "Trophée : BG 😎", "Trophée pour un BG 😎", leaderboard_line);
+	
+		// Ajout des "trophés" à côté du nom du joueur
+		function addAward(fileName, title, alt, container) {
+			var award = document.createElement("img");
+			award.classList.add("award");
+	
+			award.src = "./pictures/" + fileName + ".png";
+			award.alt = alt;
+			award.title = title;
+			award.onclick = function() {
+				showAward(award.title, award.src);
+			}
+	
+			container.appendChild(award);
 		}
-		if (nom == "tristtann") {
-			addAward("trophyFishy", "Trophée : ça sent le poisson (1er avril)", "Trophée du 1er avril", leaderboard_line);
+	
+		// Affichage du "trophé" en plein écran
+		function showAward(title, src) {
+			document.getElementById("awardFSTitle").innerText = title;
+			document.getElementById("awardFSImg").src = src;
+	
+			document.getElementById("awardContainer").classList.add("visible");
 		}
-		if (nom == "tristtann") {
-			addAward("trophyRGB", "Trophée : un jeu *Hue* en couleur", "Trophée du jeu Hue", leaderboard_line);
-		}
-		if (nom == "tristtann" || nom == "bugmanfr") {
-			addAward("trophySponsor", "Trophée : Sponsor du jeu", "Trophée de sponsor du jeu", leaderboard_line);
-		}
-		if (nom == "bosslennygood") {
-			addAward("trophyNice", "Trophée : 69ème jeu trouvé", "Trophée du 69ème jeu trouvé", leaderboard_line);
-		}
-
-		const lb_line_pseudo = document.createElement("span");
-		lb_line_pseudo.classList.add("pseudo");
-		lb_line_pseudo.innerText = nom;
-
-		const lb_line_points = document.createElement("span");
-		lb_line_points.classList.add("points");
-		lb_line_points.innerText = points;
-
-		leaderboard_line.appendChild(lb_line_pseudo);
-		leaderboard_line.appendChild(lb_line_points);
-
-		if (points < 0) {
-			leaderboard_line.classList.add("negative");
-		}
-		document.getElementById("leaderboard").appendChild(leaderboard_line);
-	});
-
-	function addAward(fileName, title, alt, container) {
-		const award = document.createElement("img");
-		award.classList.add("award");
-
-		award.src = "./pictures/" + fileName + ".png";
-		award.alt = alt;
-		award.title = title;
-		award.onclick = function() {
-			showAward(award.title, award.src);
-		}
-
-		container.appendChild(award);
-	}
-
-	function showAward(title, src) {
-		document.getElementById("awardFSTitle").innerText = title;
-		document.getElementById("awardFSImg").src = src;
-
-		document.getElementById("awardContainer").classList.add("visible");
-	}
-
-	document.getElementById("awardContainer").addEventListener("click", function() {
-		document.getElementById("awardContainer").classList.add("hide");
-		document.getElementById("awardContainer").classList.remove("visible");
-		setTimeout(function(){ document.getElementById("awardContainer").classList.remove("hide"); }, 400);
-	});
-
-	var lastEditDate = new Date(document.lastModified);
-	document.getElementById('dateAuto').innerText = lastEditDate.toLocaleDateString();
-</script>
+	
+		// Création du tableau des joueurs
+		var totalPoints = 0;
+		var lineNb = 0;
+		
+		
+		const listPoints = Object.entries(tableLeaderboard).sort((a, b) => b[1] - a[1]);
+		listPoints.forEach(ligne => {
+			lineNb++;
+			var playerAsAward = false;
+			var playerPoints = ligne[1];
+			var playerName = ligne[0];
+	
+			if(parseInt(playerPoints) != NaN)
+				totalPoints+= parseInt(playerPoints);
+	
+			var leaderboardLine = document.createElement("div");
+			leaderboardLine.classList.add("lb_line");
+			leaderboardLine.tabIndex = 0;
+	
+			/*   TROPHÉES   */
+			
+			if (lineNb == 1) {
+				addAward("trophyFirst", 
+						"Trophée : Première place, GG !", 
+						"Trophée de la première place", 
+						leaderboardLine);
+			}
+			if (playerName == "rayreth") {
+				addAward("trophyBG", 
+						"Trophée : BG 😎", 
+						"Trophée pour un BG 😎", 
+						leaderboardLine);
+			}
+			if (playerName == "tristtann") {
+				addAward("trophyFishy", 
+						"Trophée : ça sent le poisson (1er avril)", 
+						"Trophée du 1er avril", 
+						leaderboardLine);
+				addAward("trophyRGB", 
+						"Trophée : un jeu *Hue* en couleur", 
+						"Trophée du jeu Hue", 
+						leaderboardLine);
+			}
+			if (playerName == "tristtann" || playerName == "bugmanfr") {
+				addAward("trophySponsor", 
+						"Trophée : Sponsor du jeu", 
+						"Trophée de sponsor du jeu", 
+						leaderboardLine);
+			}
+			if (playerName == "bosslennygood") {
+				addAward("trophyNice", 
+						"Trophée : 69ème jeu trouvé", 
+						"Trophée du 69ème jeu trouvé", 
+						leaderboardLine);
+			}
+	
+			var lbLinePseudo = document.createElement("span");
+			lbLinePseudo.classList.add("pseudo");
+			lbLinePseudo.innerText = playerName;
+	
+			var lbLinePoints = document.createElement("span");
+			lbLinePoints.classList.add("points");
+			lbLinePoints.innerText = playerPoints;
+	
+			leaderboardLine.appendChild(lbLinePseudo);
+			leaderboardLine.appendChild(lbLinePoints);
+	
+			if (playerPoints < 0) {
+				leaderboardLine.classList.add("negative");
+			}
+			document.getElementById("leaderboard").appendChild(leaderboardLine);
+		});
+	
+		// Affichage du nombre total de jeux devinés
+		document.getElementById('nbJeuxTotal').innerText = totalPoints;
+	
+		// Masquer le "trophé" en plein écran lors d'un clic
+		document.getElementById("awardContainer").addEventListener("click", function() {
+			document.getElementById("awardContainer").classList.add("hide");
+			document.getElementById("awardContainer").classList.remove("visible");
+			setTimeout(function(){ document.getElementById("awardContainer").classList.remove("hide"); }, 400);
+		});
+	
+		// Mise à jour de la date de "dernière mise à jour" du classement
+		var lastEditDate = new Date(document.lastModified);
+		document.getElementById('dateAuto').innerText = lastEditDate.toLocaleDateString();
+	</script>
 </html>
