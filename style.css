@@ -1,24 +1,35 @@
-
+[data-theme="auto"] {
+	color-scheme: light dark;
+}
+[data-theme="dark"] {
+	color-scheme: dark;
+}
+[data-theme="light"] {
+	color-scheme: light;
+}
 
 @media (prefers-color-scheme: light) {
-	html {
-		color-scheme: light;
-	}
-	:root {
+	[data-theme="auto"]:root {
 		--main-color: #941b0c;
 	}
 }
+[data-theme="light"]:root {
+	--main-color: #941b0c;
+}
 
 @media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
-	:root {
+	[data-theme="auto"]:root {
 		--main-color: #de2a13;
 	}
-	#logo {
+	[data-theme="auto"] #logo {
 		filter: brightness(1.5);
 	}
+}
+[data-theme="dark"]:root {
+	--main-color: #de2a13;
+}
+[data-theme="dark"] #logo {
+	filter: brightness(1.5);
 }
 
 @media (max-width: 700px) {
