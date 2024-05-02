@@ -26,8 +26,8 @@
 		<header>
 			<h1>C'est quoi le jeu</h1><img id="logo" src="./favicon.png" alt="icon">
 		</header>
-		<div id="leaderboard">
-			<!-- Contenu dynamique -->
+		<!--<div id="leaderboard">
+			<!- Contenu dynamique ->
 		</div>
 		<div id="awardContainer">
 			<span id="awardFSClose">Cliquez n'importe où pour fermer</span>
@@ -37,7 +37,11 @@
 		<p id="stats">
 			Nombre de jeux total devinés : <span id="nbJeuxTotal" class="stats_nb">...</span><br>
 			… non devinés : <span class="stats_nb">10</span>
-		</p>
+		</p>-->
+		<div id="movedMessage">
+			<p>"C'est quoi le jeu ?" à déménagé à l'adresse suivante :</p>
+			<a href="https://ssstuart.net/CQLJ/leaderboard.php">ssstuart.net/CQLJ</a>
+		</div>
 		<footer>
 			<p id="sponsor">Sponsorisé par Tristan et BUG-MAN-FR &#128526;</p>
 			<p id="updatedDate">Mis à jour le <span id="dateAuto">...</span></p>
@@ -45,7 +49,7 @@
 	</body>
 	<script>
 		// Classement des joueurs
-		const tableLeaderboard = {
+		/*const tableLeaderboard = {
 			"tristtann":		"18",
 			"_loyde18":			"17",
 			"bosslennygood":	"6",
@@ -77,7 +81,7 @@
 			"rayreth":			"0",
 			"bugmanfr":			"0",
 			"colonelfp14":		"-1"
-		}
+		}*/
 	
 		// Ajout des "trophés" à côté du nom du joueur
 		function addAward(fileName, title, alt, container) {
@@ -103,7 +107,7 @@
 		}
 	
 		// Création du tableau des joueurs
-		var totalPoints = 0;
+		/*var totalPoints = 0;
 		var lineNb = 0;
 		
 		
@@ -119,11 +123,11 @@
 	
 			var leaderboardLine = document.createElement("div");
 			leaderboardLine.classList.add("lb_line");
-			leaderboardLine.tabIndex = 0;
+			leaderboardLine.tabIndex = 0;*/
 	
 			/*   TROPHÉES   */
 			
-			if (lineNb == 1) {
+			/*if (lineNb == 1) {
 				addAward("trophyFirst", 
 						"Trophée : Première place, GG !", 
 						"Trophée de la première place", 
@@ -185,10 +189,10 @@
 				leaderboardLine.classList.add("negative");
 			}
 			document.getElementById("leaderboard").appendChild(leaderboardLine);
-		});
+		});*/
 	
 		// Affichage du nombre total de jeux devinés
-		document.getElementById('nbJeuxTotal').innerText = totalPoints;
+		//document.getElementById('nbJeuxTotal').innerText = totalPoints;
 	
 		// Masquer le "trophé" en plein écran lors d'un clic
 		document.getElementById("awardContainer").addEventListener("click", function() {
